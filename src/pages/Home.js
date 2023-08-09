@@ -1,14 +1,17 @@
 import React from "react";
+import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
 
 const Home = () => {
+    const [roomId, setRoomId] = useState('')
+    const [username, setUserName] = useState('')
 
-
-    const createRoom = (e) =>{
+    const createRoom = (e) => {
         e.preventDefault();
 
         const id = uuidv4()
-        console.log(id)
+        setRoomId(id)
+
     }
 
 
@@ -20,17 +23,13 @@ const Home = () => {
 
 
     return (
-        <section class=" dark:bg-gray-900">
+        
             <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
                 <a
                     href="#m"
-                    class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
+                    class="flex items-center mb-6 text-rose-800 text-2xl font-semibold "
                 >
-                    <img
-                        class="w-8 h-8 mr-2"
-                        src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg"
-                        alt="logo"
-                    />
+                    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
                     StreamScript
                 </a>
                 <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
@@ -47,9 +46,11 @@ const Home = () => {
                                     Your RoomID
                                 </label>
                                 <input
-                                    type="text"
-                                    name="Username"
+
+                                    name="roomId"
                                     id="roomId"
+                                    value={roomId}
+                                    onChange={(e) => setRoomId(e.target.value)}
                                     class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 />
                             </div>
@@ -65,6 +66,7 @@ const Home = () => {
                                     name="username"
                                     id="username"
                                     placeholder="Username"
+                                    onChange={(e) => setUserName(e.target.value)}
                                     class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     required=""
                                 />
@@ -99,7 +101,7 @@ const Home = () => {
                             </div>
 
                             <div className="w-full text-center">
-                                
+
                                 <button
                                     onClick={createRoom}
                                     class="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-indigo-600 transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group"
@@ -141,14 +143,14 @@ const Home = () => {
                                         Create A Room
                                     </span>
                                 </button>
-                                
-                               
+
+
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
-        </section>
+       
     );
 };
 

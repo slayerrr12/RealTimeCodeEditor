@@ -9,7 +9,7 @@ import  Home  from './pages/Home';
 
 function App() {
   return (
-    <div className=' dark:bg-gray-900'>
+   
       <BrowserRouter>
 
       <Routes>
@@ -23,7 +23,7 @@ function App() {
 
 
       </BrowserRouter>
-    </div>
+    
   );
 }
 
