@@ -12,7 +12,7 @@ function App() {
   return (
 
 
-    <>
+    <div className='bg-cover bg-slate-700	'>
 
       <div>
         <Toaster
@@ -49,7 +49,7 @@ function App() {
 
       </BrowserRouter>
 
-    </>
+    </div>
 
 
   );

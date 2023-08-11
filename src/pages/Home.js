@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 const Home = () => {
     const navigate = useNavigate();
     const [roomId, setRoomId] = useState("");
-    const [userName, setUserName] = useState("");
+    const [userName, setUserName] = useState(null);
 
     const createRoom = (e) => {
         e.preventDefault();
@@ -23,10 +23,13 @@ const Home = () => {
             toast.error("Room ID and username is required");
             return;
         }
-        //redirect
-        navigate(`/editor/${roomId}`, {
-            state: { username: userName },
-        });
+        else {
+            navigate(`/editor/${roomId}`, {
+                state: { username: userName },
+            });
+
+        }
+
     };
     return (
         <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
