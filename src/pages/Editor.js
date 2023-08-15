@@ -18,40 +18,32 @@ const Editor = () => {
         </div>
       </nav>
 
-      <div class=" relative flex flex-row">
-        <div class="basis-1/4 h-screen bg-green-950 text-sky-400/100 text-center">
-          Users Inside Your Room
-          <div class=" relative flex flex-row">
-            <div>
-              {clients.map((client) => (
-                <Client
-                  className="mt-5"
-                  key={client.clientId}
-                  username={client.username}
-                />
-              ))}
-              <div></div>
+      <div className="mainWrap">
+            <div className="aside">
+                <div className="asideInner">
+                    
+                    <h3>Users In This Room</h3>
+                    <div className="clientsList mt-5">
+                        {clients.map((client) => (
+                            <Client
+                                key={client.socketId}
+                                username={client.username}
+                            />
+                        ))}
+                    </div>
+                </div>
+                <button className="btn copyBtn" >
+                    Copy ROOM ID
+                </button>
+                <button className="btn leaveBtn" >
+                    Leave
+                </button>
             </div>
-          </div>
-          <button
-            type="button"
-            class=" absolute bottom-32 left-2 text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
-          >
-            Leave Room
-          </button>
-          <button
-            type="button"
-            class=" absolute bottom-20 left-2 text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
-          >
-            Copy Room ID
-          </button>
+            <div className="editorWrap">
+                <CodeEditor/>
+            </div>
         </div>
-
-        <div class=" w-full  bg-orange-800 text-blue-400/100 text-center">
-          <CodeEditor />
         </div>
-      </div>
-    </div>
   );
 };
 
