@@ -2,13 +2,16 @@ import React from 'react'
 import Avatar from 'react-avatar'
 
 
-const Client = (username) => {
+const Client = ({username}) => {
     return (
-        <div className='client'>
-            <span className='username'>
+        <div className='mt-1.5'>
+            <span className='my-0.5'>
                 {username}
             </span>
-            < Avatar name={username} size={50} round="14px"/>
+            <div>
+            <Avatar name={username} size={50} round="14px"/>
+            </div>
+            
         </div>
     )
 }
