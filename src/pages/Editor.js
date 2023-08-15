@@ -10,7 +10,7 @@ const Editor = () => {
 
   return (
     <div className="relative">
-      <nav class="bg-white sticky	 w-full border-gray-200 dark:bg-gray-900">
+      <nav class="bg-white sticky top-0 z-50	 w-full border-gray-200 dark:bg-gray-900">
         <div class=" flex flex-wrap items-center justify-between mx-auto p-4">
           <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
             StreamScript
@@ -32,11 +32,11 @@ const Editor = () => {
                         ))}
                     </div>
                 </div>
-                <button className="btn copyBtn" >
-                    Copy ROOM ID
+                <button>
+                    Copy Room ID
                 </button>
-                <button className="btn leaveBtn" >
-                    Leave
+                <button>
+                  Leave Room
                 </button>
             </div>
             <div className="editorWrap">
