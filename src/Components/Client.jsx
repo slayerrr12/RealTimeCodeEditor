@@ -1,4 +1,6 @@
 import React from 'react'
+import Avatar from 'react-avatar'
+
 
 const Client = (username) => {
     return (
@@ -6,7 +8,7 @@ const Client = (username) => {
             <span className='username'>
                 {username}
             </span>
-            < Avatar />
+            < Avatar name={username} size={50} round="14px"/>
         </div>
     )
 }

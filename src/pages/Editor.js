@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import Client from "../Components/Client";
 
 const Editor = () => {
-  const [client, setClient] = useState([
+  const [clients, setClients] = useState([
     { clientId: 1, username: "Slayerr12" },
     { client: 2, username: "harsh" },
   ]);
@@ -19,21 +20,14 @@ const Editor = () => {
       <div class="  flex flex-row">
         <div class="basis-1/4 h-screen bg-green-950 text-sky-400/100 text-center">
           Users Inside Your Room
-
           <div class="grid grid-cols-4 gap-4">
-          <div >
-                        {clients.map((client) => (
-                            <div
-                                key={client.socketId}
-                                username={client.username}
-                            />
-                        ))}
-                    </div>
+            <div>
+              {clients.map((client) => (
+                <Client key={client.socketId} username={client.username} />
+              ))}
+            </div>
           </div>
-
-
         </div>
-
 
         <div class=" w-full  bg-orange-800 text-blue-400/100 text-center">
           Editor
